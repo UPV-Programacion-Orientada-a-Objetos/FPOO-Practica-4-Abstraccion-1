@@ -3,6 +3,10 @@ package edu.upvictoria.fpoo.persistencia;
 import java.io.*;
 
 public class Bibliotecario extends Usuario{
+
+    public Bibliotecario(){
+        super.setTipo_us("Bibliotecario");
+    }
     public void NuevoBibliotecario(Usuario us) {
         System.out.println("Nuevo bibliotecario!!");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Usuarios.csv", true))) {
@@ -14,7 +18,7 @@ public class Bibliotecario extends Usuario{
                 us.setNombre(bufer.readLine());
 
                 System.out.println("Ingresa un id: ");
-                us.setId(Integer.parseInt(bufer.readLine()));
+                us.setId(bufer.readLine());
 
                 writer.write(us.getId() + "\t" + us.getNombre() + "\t" + us.getTipo_us() + "\t" + "0");
                 writer.newLine();

@@ -12,7 +12,8 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println( "registro de: ");
+
+        System.out.println("busqueda de: ");
         System.out.println("1)estudiante");
         System.out.println("2)Maestro");
         System.out.println("3)Bibliotecario");
@@ -20,15 +21,16 @@ public class App
         switch (opc){
             case 1:
                 Estudiante estudiante = new Estudiante();
-                estudiante.NuevoEstudiante(estudiante);
+                estudiante.buscarUsuario(estudiante);
+
                 break;
             case 2:
                 Maestro maestro = new Maestro();
-                maestro.NuevoMaestro(maestro);
+                maestro.buscarUsuario(maestro);
                 break;
             case 3:
                 Bibliotecario bibliotecario = new Bibliotecario();
-                bibliotecario.NuevoBibliotecario(bibliotecario);
+                bibliotecario.buscarUsuario(bibliotecario);
                 break;
             default:
                 System.out.println("opcion no valida");

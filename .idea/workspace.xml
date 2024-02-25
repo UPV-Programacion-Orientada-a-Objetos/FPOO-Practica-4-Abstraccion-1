@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dff3d27c-ff71-48e4-805b-38a8486b3e84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bibliotecario.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/herenciaAbstracta1/herenciaAbstracta1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Bibliotecario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Estudiante.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Maestro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Recurso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuarios.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Usuarios.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bibliotecario.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Bibliotecario.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Bibliotecario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Estudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Maestro.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Maestro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/persistencia/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/persistencia/Bibliotecario.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/persistencia/Bibliotecario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/persistencia/Estudiante.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/persistencia/Estudiante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/persistencia/Maestro.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/persistencia/Maestro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/persistencia/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/persistencia/Usuario.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -95,4 +95,41 @@ public abstract class Recurso {
         return false;
     }
 
+    public boolean BuscarRecursoAutor(Recurso recurso) throws IOException{
+        BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
+        String nombreArchivo = "Recursos.csv";
+        File archivo = new File(nombreArchivo);
+        boolean encontrado = false;
+        System.out.println("ingresa el Autor del " + getTipo() + " : ");
+        recurso.setAutor(bufer.readLine());
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            int cont=0;
+            while ((linea = br.readLine()) != null) {
+                String[] columnas = linea.split("\t");
+                if (columnas.length >= 3 && Objects.equals(recurso.getAutor(), columnas[3]) && Objects.equals(recurso.getTipo(), columnas[2])) {
+                    encontrado = true;
+                    recurso.setTitulo(columnas[1]);
+                    recurso.setNum_id(columnas[0]);
+                    recurso.setEstado(columnas[4]);
+                    System.out.println("ID: " + recurso.getNum_id() + ", Titulo: " + recurso.getTitulo() + ", Tipo: " + recurso.getTipo() + ", Autor: " + recurso.getAutor() + ", Estado: " + recurso.getEstado());
+                    cont++;
+                    continue;
+                }
+            }
+            if (cont>0){
+                return encontrado;
+            }
+
+        } catch (IOException e) {
+            System.err.println("Error al buscar el usuario en el archivo: " + e.getMessage());
+            throw e;
+        }
+
+        if (!encontrado) {
+            System.out.println(recurso.getTipo() + " no encontrado.");
+        }
+        return false;
+    }
 }

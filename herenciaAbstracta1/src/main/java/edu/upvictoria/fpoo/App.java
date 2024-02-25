@@ -14,7 +14,7 @@ public class App
     public static void main( String[] args ) throws IOException {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Buscar recuros de: ");
+        System.out.println("Buscar recuros por autor: ");
         System.out.println("1)Libro");
         System.out.println("2)Diario");
         System.out.println("3)revista");
@@ -24,19 +24,19 @@ public class App
         switch (opc){
             case 1:
                 Libro libro = new Libro();
-                buscar=libro.BuscarRecursoTitulo(libro);
+                buscar=libro.BuscarRecursoAutor(libro);
                 break;
             case 2:
                 Diario diario = new Diario();
-                buscar=diario.BuscarRecursoTitulo(diario);
+                buscar=diario.BuscarRecursoAutor(diario);
                 break;
             case 3:
                 Revistas revista = new Revistas();
-                buscar=revista.BuscarRecursoTitulo(revista);
+                buscar=revista.BuscarRecursoAutor(revista);
                 break;
             case 4:
                 Otro otro = new Otro();
-                buscar=otro.BuscarRecursoTitulo(otro);
+                buscar=otro.BuscarRecursoAutor(otro);
                 break;
             default:
                 System.out.println("opcion no valida");

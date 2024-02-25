@@ -15,11 +15,11 @@ public class App
                 case 1:
                     //registrar usuarios
                     String tt= mn.inicio_Sesion();
-                    if(tt!=null){
+                    if(tt!="No existe"){
                         if(tt.equals("Administrador")) {
-                            System.out.println("Usuario: Admisnistrador");
+                            System.out.println("Usuario: Administrador");
                         }
-                    }else if(tt==null){
+                    }else if(tt.equals("No existe")){
                         System.out.println("Ingrese usuario (Administrador)");
                     }
 

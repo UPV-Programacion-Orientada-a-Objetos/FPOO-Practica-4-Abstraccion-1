@@ -1,13 +1,37 @@
 package edu.upvictoria.fpoo;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import edu.upvictoria.fpoo.persistencia.Bibliotecario;
+import edu.upvictoria.fpoo.persistencia.Estudiante;
+import edu.upvictoria.fpoo.persistencia.Maestro;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class App
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main( String[] args ) throws IOException {
+        BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println( "registro de: ");
+        System.out.println("1)estudiante");
+        System.out.println("2)Maestro");
+        System.out.println("3)Bibliotecario");
+        int opc= Integer.parseInt(bufer.readLine());
+        switch (opc){
+            case 1:
+                Estudiante estudiante = new Estudiante();
+                estudiante.NuevoEstudiante(estudiante);
+                break;
+            case 2:
+                Maestro maestro = new Maestro();
+                maestro.NuevoMaestro(maestro);
+                break;
+            case 3:
+                Bibliotecario bibliotecario = new Bibliotecario();
+                bibliotecario.NuevoBibliotecario(bibliotecario);
+                break;
+            default:
+                System.out.println("opcion no valida");
+        }
     }
 }

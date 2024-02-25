@@ -14,31 +14,35 @@ public class App
     public static void main( String[] args ) throws IOException {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Agregar recuros de: ");
+        System.out.println("Buscar recuros de: ");
         System.out.println("1)Libro");
         System.out.println("2)Diario");
         System.out.println("3)revista");
         System.out.println("4)Otro");
         int opc= Integer.parseInt(bufer.readLine());
+        Boolean buscar = false;
         switch (opc){
             case 1:
                 Libro libro = new Libro();
-                libro.NuevoLibro(libro);
+                buscar=libro.BuscarRecursoTitulo(libro);
                 break;
             case 2:
                 Diario diario = new Diario();
-                diario.NuevoDiario(diario);
+                buscar=diario.BuscarRecursoTitulo(diario);
                 break;
             case 3:
                 Revistas revista = new Revistas();
-                revista.NuevaRevista(revista);
+                buscar=revista.BuscarRecursoTitulo(revista);
                 break;
             case 4:
                 Otro otro = new Otro();
-                otro.NuevoRecurso(otro);
+                buscar=otro.BuscarRecursoTitulo(otro);
                 break;
             default:
                 System.out.println("opcion no valida");
+        }
+        if (buscar==false){
+            System.out.println("no se encontro el recurso");
         }
     }
 }

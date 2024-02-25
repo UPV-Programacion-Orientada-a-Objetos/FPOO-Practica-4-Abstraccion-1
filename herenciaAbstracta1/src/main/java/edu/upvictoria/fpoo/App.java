@@ -6,6 +6,7 @@ public class App
 {
     public static void main( String[] args )throws IOException
     {
+        Menu mn=new Menu();
         int opc=0;
         System.out.println("---- BIENVENIDO ----");
         while(opc==0){
@@ -13,6 +14,15 @@ public class App
             switch(opc){
                 case 1:
                     //registrar usuarios
+                    String tt= mn.inicio_Sesion();
+                    if(tt!=null){
+                        if(tt.equals("Administrador")) {
+                            System.out.println("Usuario: Admisnistrador");
+                        }
+                    }else if(tt==null){
+                        System.out.println("Ingrese usuario (Administrador)");
+                    }
+
                     break;
                 case 2:
                     //Recursos

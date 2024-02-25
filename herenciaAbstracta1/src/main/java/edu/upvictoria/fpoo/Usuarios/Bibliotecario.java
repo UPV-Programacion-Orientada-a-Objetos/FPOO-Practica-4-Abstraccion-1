@@ -1,18 +1,18 @@
-package edu.upvictoria.fpoo.persistencia;
+package edu.upvictoria.fpoo.Usuarios;
 
 import java.io.*;
 
-public class Estudiante extends Usuario {
-    public Estudiante(){
-        super.setTipo_us("Estudiante");
+public class Bibliotecario extends Usuario {
+
+    public Bibliotecario(){
+        super.setTipo_us("Bibliotecario");
     }
-    public void NuevoEstudiante(Usuario us) {
-        System.out.println("Nuevo estudiante!!");
+    public void NuevoBibliotecario(Usuario us) {
+        System.out.println("Nuevo bibliotecario!!");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Usuarios.csv", true))) {
             BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
 
-
-                us.setTipo_us("Estudiante");
+                us.setTipo_us("Bibliotecario");
 
                 System.out.println("Ingresa el nombre: ");
                 us.setNombre(bufer.readLine());

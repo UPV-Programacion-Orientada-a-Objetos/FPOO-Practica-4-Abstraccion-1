@@ -1,16 +1,16 @@
-package edu.upvictoria.fpoo.persistencia;
+package edu.upvictoria.fpoo.Recursos;
 
-public class Recurso {
-    //título, autor o número de identificación
+public abstract class Recurso {
+    //título, autor o número de identificación,
     private String titulo;
     private String autor;
-    private int num_id;
+    private String num_id;
     private String tipo;
 
     public Recurso() {
     }
 
-    public Recurso(String titulo, String autor, int num_id, String tipo) {
+    public Recurso(String titulo, String autor, String num_id, String tipo) {
         this.titulo = titulo;
         this.autor = autor;
         this.num_id = num_id;
@@ -33,11 +33,11 @@ public class Recurso {
         this.autor = autor;
     }
 
-    public int getNum_id() {
+    public String getNum_id() {
         return num_id;
     }
 
-    public void setNum_id(int num_id) {
+    public void setNum_id(String num_id) {
         this.num_id = num_id;
     }
 

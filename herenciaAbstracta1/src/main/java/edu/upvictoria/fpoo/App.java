@@ -1,8 +1,9 @@
 package edu.upvictoria.fpoo;
 
-import edu.upvictoria.fpoo.persistencia.Bibliotecario;
-import edu.upvictoria.fpoo.persistencia.Estudiante;
-import edu.upvictoria.fpoo.persistencia.Maestro;
+import edu.upvictoria.fpoo.Recursos.Diario;
+import edu.upvictoria.fpoo.Recursos.Libro;
+import edu.upvictoria.fpoo.Recursos.Otro;
+import edu.upvictoria.fpoo.Recursos.Revistas;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,24 +14,28 @@ public class App
     public static void main( String[] args ) throws IOException {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("busqueda de: ");
-        System.out.println("1)estudiante");
-        System.out.println("2)Maestro");
-        System.out.println("3)Bibliotecario");
+        System.out.println("Agregar recuros de: ");
+        System.out.println("1)Libro");
+        System.out.println("2)Diario");
+        System.out.println("3)revista");
+        System.out.println("4)Otro");
         int opc= Integer.parseInt(bufer.readLine());
         switch (opc){
             case 1:
-                Estudiante estudiante = new Estudiante();
-                estudiante.buscarUsuario(estudiante);
-
+                Libro libro = new Libro();
+                libro.NuevoLibro(libro);
                 break;
             case 2:
-                Maestro maestro = new Maestro();
-                maestro.buscarUsuario(maestro);
+                Diario diario = new Diario();
+                diario.NuevoDiario(diario);
                 break;
             case 3:
-                Bibliotecario bibliotecario = new Bibliotecario();
-                bibliotecario.buscarUsuario(bibliotecario);
+                Revistas revista = new Revistas();
+                revista.NuevaRevista(revista);
+                break;
+            case 4:
+                Otro otro = new Otro();
+                otro.NuevoRecurso(otro);
                 break;
             default:
                 System.out.println("opcion no valida");

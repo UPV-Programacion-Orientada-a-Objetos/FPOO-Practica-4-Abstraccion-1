@@ -1,9 +1,9 @@
-package edu.upvictoria.fpoo.persistencia;
+package edu.upvictoria.fpoo.Usuarios;
 
 import java.io.*;
 import java.util.Objects;
 
-public class Usuario {
+public abstract class Usuario {
     private String id;
     private String nombre;
     private Object tipo_us;
@@ -42,7 +42,7 @@ public class Usuario {
         this.tipo_us = tipo_us;
     }
 
-    public Boolean buscarUsuario(Usuario usuario) throws IOException {
+    public Boolean buscarUsuarioTipo(Usuario usuario) throws IOException {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
         String nombreArchivo = "Usuarios.csv";
         File archivo = new File(nombreArchivo);
@@ -72,4 +72,7 @@ public class Usuario {
         }
         return false;
     }
+    //eliminar usuario
+    //editar usuario
+
 }

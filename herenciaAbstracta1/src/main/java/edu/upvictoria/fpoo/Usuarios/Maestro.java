@@ -1,8 +1,8 @@
-package edu.upvictoria.fpoo.persistencia;
+package edu.upvictoria.fpoo.Usuarios;
 
 import java.io.*;
 
-public class Maestro extends Usuario{
+public class Maestro extends Usuario {
 
     public Maestro(){
         super.setTipo_us("Maestro");

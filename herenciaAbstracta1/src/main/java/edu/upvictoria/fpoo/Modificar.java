@@ -15,13 +15,12 @@ public class Modificar {
             BufferedReader br=new BufferedReader(new FileReader("src/main/Resources/USD.csv"));
             File archivonvo=new File("src/main/Resources/USD.csv"+ ".temp");
             PrintWriter pw = new PrintWriter(new FileWriter(archivonvo));
-            br.readLine();
             String linea;
             while((linea=br.readLine())!=null){
                 datos=linea.split("\t");
                 int ID_enc=Integer.parseInt(datos[0]);
                 if(ID==ID_enc){
-                    System.out.println("Informacion de usuario:\nID: "+datos[0]+"\nNombre: "+datos[1]+"\nApellido: "+datos[2]+"\nContraseña: "+datos[3]+"\nTipo de usuaripo:"+datos[4]+"\n¿Que desea modificar?");
+                    System.out.println("Información de usuario:\nID: "+datos[0]+"\nNombre: "+datos[1]+"\nApellido: "+datos[2]+"\nContraseña: "+datos[3]+"\nTipo de usuaripo:"+datos[4]+"\n¿Que desea modificar?");
                     System.out.println("\n1)Nombre\n2)Apellido\n3)Contraseña\n4)Tipo de usuario");
                     entrada=leer.readLine();
                     int opc=Integer.parseInt(entrada);
@@ -32,7 +31,7 @@ public class Modificar {
                             datos[1]=nvnombre;
                             break;
                         case 2:
-                            System.out.println("Escribe nueva modificacion a apellido:");
+                            System.out.println("Escribe nueva modificación a apellido:");
                             String nvcontraseña=leer.readLine();
                             datos[2]=nvcontraseña;
                             break;
@@ -49,9 +48,9 @@ public class Modificar {
                             if(U==1){
                                 datos[4]="Bibliotecario";
                             }else if(U==2){
-                                datos[4]="Profesor";
+                                datos[4]="Estudiante";
                             }else if(U==3){
-                                datos[4]="Usuario";
+                                datos[4]="Profesor";
                             }
                     }
                     pw.println(String.join("\t",datos));

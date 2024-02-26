@@ -22,7 +22,7 @@ public class Administrador extends Usuario{
                   break;
               case 3:
                   //modificar
-                  modificar(); 
+                  modificar();
                   break;
           }
         }
@@ -70,7 +70,7 @@ public class Administrador extends Usuario{
 
     public int obtenerID(String archivo)throws IOException{
        int ID=0;
-       try(BufferedReader leer=new BufferedReader(new FileReader("src/main/Resources/USD.csv"))){
+       try(BufferedReader leer=new BufferedReader(new FileReader("archivo"))){
            String linea;
            while((linea=leer.readLine())!=null){
                String []datos=linea.split("\t");
@@ -118,7 +118,6 @@ public class Administrador extends Usuario{
                     }
                 }
             }
-
             br.close();
             pw.close();
         }catch(IOException e){
@@ -131,7 +130,6 @@ public class Administrador extends Usuario{
             filetemp.renameTo(file);
         }
     }
-
     public void modificar()throws IOException{
         BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese el ID del usuario a modificar");

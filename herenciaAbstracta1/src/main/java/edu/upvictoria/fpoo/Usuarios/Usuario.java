@@ -8,7 +8,7 @@ import edu.upvictoria.fpoo.Recursos.Revistas;
 import java.io.*;
 import java.util.Objects;
 
-public abstract class Usuario {
+public  class Usuario {
     private String id;
     private String nombre;
     private Object tipo_us;

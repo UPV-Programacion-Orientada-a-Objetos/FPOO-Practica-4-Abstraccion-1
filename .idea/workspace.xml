@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dff3d27c-ff71-48e4-805b-38a8486b3e84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Usuarios.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recursos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Recursos.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Otro.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Otro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Bibliotecario.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Bibliotecario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Estudiante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Maestro.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Maestro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Recurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Recurso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/Usuarios/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/Usuarios/Usuario.class" afterDir="false" />

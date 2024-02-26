@@ -1,7 +1,8 @@
 package edu.upvictoria.fpoo;
 
+import edu.upvictoria.fpoo.Recursos.Libro;
+import edu.upvictoria.fpoo.Recursos.Revistas;
 import edu.upvictoria.fpoo.Usuarios.Estudiante;
-
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,14 +12,14 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
-        boolean borrado= false;
-        System.out.println("eliminar usuario");
-        Estudiante estudiante1 = new Estudiante();
-        estudiante1.setId("2213");
-        borrado=estudiante1.eliminarUsuario(estudiante1);
-        if (borrado==true){
-            System.out.println("usuario eliminado.");
-        }
+        System.out.println("ELiminar recurso");
+        Libro libro = new Libro();
+        libro.setNum_id("1");
+        libro.EliminarRecurso(libro);
 
+        System.out.println("Editar recurso: ");
+        Revistas revistas= new Revistas();
+        revistas.setNum_id("1");
+        revistas.Modificar_Recurso(revistas);
     }
 }

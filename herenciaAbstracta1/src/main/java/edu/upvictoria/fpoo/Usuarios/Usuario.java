@@ -51,6 +51,8 @@ public abstract class Usuario {
         this.tipo_us = tipo_us;
     }
 
+    /**buscar por tipo de usuario y ID
+     */
     public Boolean buscarUsuarioTipo(Usuario usuario) throws IOException {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
         String nombreArchivo = "Usuarios.csv";
@@ -82,6 +84,10 @@ public abstract class Usuario {
         }
         return false;
     }
+
+    /**
+     * buscar por ID
+     */
     public Boolean buscarUsuarioID(Usuario usuario) throws IOException {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
         String nombreArchivo = "Usuarios.csv";
@@ -110,8 +116,10 @@ public abstract class Usuario {
         return false;
     }
 
-    //eliminar usuario
-    public static boolean eliminarUsuario(Usuario us) throws IOException {
+    /**
+     *eliminar usuario por ID
+     */
+    public boolean eliminarUsuario(Usuario us) throws IOException {
         File archivo = new File("Usuarios.csv");
         File archivoTemporal = new File("Temp.csv");
 
@@ -132,13 +140,13 @@ public abstract class Usuario {
                 bw.newLine();
             }
         }
-
         archivo.delete();
         archivoTemporal.renameTo(archivo);
 
         return encontrado;
     }
-
-    //editar usuario
+    /**
+     * editar usuario
+     */
 
 }

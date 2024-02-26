@@ -1,6 +1,5 @@
 package edu.upvictoria.fpoo;
 import edu.upvictoria.fpoo.Usuarios.Administrador;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -11,21 +10,23 @@ public class App
         Menu mn=new Menu();
         int opc=0;
         System.out.println("---- BIENVENIDO ----");
-        while(opc==0){
+        while(opc!=4){
             opc=opciones();
             switch(opc){
                 case 1:
                     //registrar usuarios
                     String tt= mn.inicio_Sesion();
                     if(tt!="No existe"){
-                        if(tt.equals("Administrador")) {
-                            System.out.println("Usuario: Administrador");
+                        if(tt.equals("Bibliotecario")) {
+                            System.out.println("Usuario: Bibliotecario");
                             Administrador admin=new Administrador();
                             admin.FuncionesAdmin();
-
+                        }else{
+                            System.out.println("Acceso Denegado\nIntente nuevamente");
                         }
                     }else if(tt.equals("No existe")){
-                        System.out.println("Ingrese usuario (Administrador)");
+                        System.out.println("Ingrese usuario (Bibliotecario)");
+
                     }
                     break;
                 case 2:

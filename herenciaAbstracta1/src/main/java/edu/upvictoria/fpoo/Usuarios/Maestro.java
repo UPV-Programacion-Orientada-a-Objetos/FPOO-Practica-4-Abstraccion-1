@@ -15,14 +15,17 @@ public class Maestro extends Usuario {
             BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
 
                 us.setTipo_us("Maestro");
+            boolean encontrado;
+            System.out.println("Ingresa el nombre: ");
+            us.setNombre(bufer.readLine());
 
-                System.out.println("Ingresa el nombre: ");
-                us.setNombre(bufer.readLine());
-
-                System.out.println("Ingresa un id: ");
+            do {
+                System.out.println("ingresa el ID del "+ us.getTipo_us());
                 us.setId(bufer.readLine());
+                encontrado=us.buscarUsuarioID(us);
+            }while (encontrado==true);
 
-                writer.write(us.getId() + "\t" + us.getNombre() + "\t" + us.getTipo_us() + "\t" + "0");
+                writer.write(us.getId() + "\t" + us.getNombre() + "\t" + us.getTipo_us() + "\t" + "false");
                 writer.newLine();
 
         } catch (IOException e) {

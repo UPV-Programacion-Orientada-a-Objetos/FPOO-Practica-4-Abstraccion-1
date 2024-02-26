@@ -1,9 +1,7 @@
 package edu.upvictoria.fpoo;
 
-import edu.upvictoria.fpoo.Recursos.Diario;
-import edu.upvictoria.fpoo.Recursos.Libro;
-import edu.upvictoria.fpoo.Recursos.Otro;
-import edu.upvictoria.fpoo.Recursos.Revistas;
+import edu.upvictoria.fpoo.Usuarios.Estudiante;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,36 +11,14 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
+        boolean borrado= false;
+        System.out.println("eliminar usuario");
+        Estudiante estudiante1 = new Estudiante();
+        estudiante1.setId("2213");
+        borrado=estudiante1.eliminarUsuario(estudiante1);
+        if (borrado==true){
+            System.out.println("usuario eliminado.");
+        }
 
-        System.out.println("Buscar recuros por autor: ");
-        System.out.println("1)Libro");
-        System.out.println("2)Diario");
-        System.out.println("3)revista");
-        System.out.println("4)Otro");
-        int opc= Integer.parseInt(bufer.readLine());
-        Boolean buscar = false;
-        switch (opc){
-            case 1:
-                Libro libro = new Libro();
-                buscar=libro.BuscarRecursoAutor(libro);
-                break;
-            case 2:
-                Diario diario = new Diario();
-                buscar=diario.BuscarRecursoAutor(diario);
-                break;
-            case 3:
-                Revistas revista = new Revistas();
-                buscar=revista.BuscarRecursoAutor(revista);
-                break;
-            case 4:
-                Otro otro = new Otro();
-                buscar=otro.BuscarRecursoAutor(otro);
-                break;
-            default:
-                System.out.println("opcion no valida");
-        }
-        if (buscar==false){
-            System.out.println("no se encontro el recurso");
-        }
     }
 }

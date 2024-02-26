@@ -12,8 +12,7 @@ public class Otro extends Recurso{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Recursos.csv", true))) {
             BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
 
-            System.out.println("ingresa el tipo de material");
-            recurso.setTipo(bufer.readLine());
+            recurso.setTipo("Otro");
 
             System.out.println("Ingresa el ID del recurso: ");
             recurso.setNum_id(bufer.readLine());

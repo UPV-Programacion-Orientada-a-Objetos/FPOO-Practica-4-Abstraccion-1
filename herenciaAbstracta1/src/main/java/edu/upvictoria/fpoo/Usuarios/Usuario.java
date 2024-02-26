@@ -7,6 +7,7 @@ public abstract class Usuario {
     private String id;
     private String nombre;
     private Object tipo_us;
+    private boolean prestados;
 
 
     public Usuario() {
@@ -16,6 +17,14 @@ public abstract class Usuario {
         this.id = id;
         this.nombre = nombre;
         this.tipo_us = tipo_us;
+    }
+
+    public boolean isPrestados() {
+        return prestados;
+    }
+
+    public void setPrestados(boolean prestados) {
+        this.prestados = prestados;
     }
 
     public String getId() {
@@ -49,8 +58,9 @@ public abstract class Usuario {
         boolean encontrado = false;
         System.out.println("ingresa el nombre del usuario: ");
         usuario.setNombre(bufer.readLine());
-        System.out.println("ingresa el ID del usuario: ");
-        usuario.setId(bufer.readLine());
+            System.out.println("ingresa el ID del usuario: ");
+            usuario.setId(bufer.readLine());
+
 
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea;
@@ -72,7 +82,63 @@ public abstract class Usuario {
         }
         return false;
     }
+    public Boolean buscarUsuarioID(Usuario usuario) throws IOException {
+        BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
+        String nombreArchivo = "Usuarios.csv";
+        File archivo = new File(nombreArchivo);
+        boolean encontrado = false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] columnas = linea.split("\t");
+                if (columnas.length >= 3 && Objects.equals(usuario.getId(), columnas[0])) {
+                    usuario.setNombre(columnas[1]);
+                    usuario.setTipo_us(columnas[2]);
+                    usuario.setPrestados(Boolean.parseBoolean(columnas[3]));
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error al buscar el usuario en el archivo: " + e.getMessage());
+            throw e;
+        }
+
+        if (!encontrado) {
+            System.out.println("Usuario no encontrado.");
+        }
+        return false;
+    }
+
     //eliminar usuario
+    public static boolean eliminarUsuario(Usuario us) throws IOException {
+        File archivo = new File("Usuarios.csv");
+        File archivoTemporal = new File("Temp.csv");
+
+        boolean encontrado = false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo));
+             BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal))) {
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] columnas = linea.split("\t");
+
+                if (columnas.length >= 1 && columnas[0].equals(us.getId())) {
+                    encontrado = true;
+                    continue; // Salta la línea para que no se copie en el otro archivo**pero lo rescribe en el original haciendo que se elimine sin usar otro arch
+                }
+                bw.write(linea);
+                bw.newLine();
+            }
+        }
+
+        archivo.delete();
+        archivoTemporal.renameTo(archivo);
+
+        return encontrado;
+    }
+
     //editar usuario
 
 }

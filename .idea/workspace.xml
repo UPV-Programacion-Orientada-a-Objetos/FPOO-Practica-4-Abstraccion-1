@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dff3d27c-ff71-48e4-805b-38a8486b3e84" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuarios.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Usuarios.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Recurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Recurso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Otro.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Otro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Bibliotecario.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Bibliotecario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Estudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Maestro.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Maestro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/Recursos/Recurso.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/Recursos/Recurso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/Usuarios/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/target/classes/edu/upvictoria/fpoo/Usuarios/Usuario.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,15 +57,15 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.upvictoria.fpoo.App" />

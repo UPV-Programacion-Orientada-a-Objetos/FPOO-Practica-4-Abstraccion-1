@@ -17,20 +17,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/bibliotecario.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="&#9;" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/recursos.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="&#9;" />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>

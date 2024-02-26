@@ -1,5 +1,10 @@
 package edu.upvictoria.fpoo.Usuarios;
 
+import edu.upvictoria.fpoo.Recursos.Diario;
+import edu.upvictoria.fpoo.Recursos.Libro;
+import edu.upvictoria.fpoo.Recursos.Otro;
+import edu.upvictoria.fpoo.Recursos.Revistas;
+
 import java.io.*;
 import java.util.Objects;
 
@@ -148,5 +153,53 @@ public abstract class Usuario {
     /**
      * editar usuario
      */
+    public void ModificarUsuario(Usuario usuario)throws IOException{
+        BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
+        String nombreArchivo = "Usuarios.csv";
+        File archivo = new File(nombreArchivo);
+        boolean encontrado = false;
+        System.out.println("ingresa el ID del Usuario : ");
+        usuario.setId(bufer.readLine());
 
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] columnas = linea.split("\t");
+                if (columnas.length >= 3 && Objects.equals(usuario.getId(), columnas[0])) {
+                    encontrado = true;
+                    usuario.eliminarUsuario(usuario);
+                    //moficar con el menu******************************
+                    System.out.println("Ingresa el nuevo tipo de usuario: ");
+                    System.out.println("1)estudiante");
+                    System.out.println("2)Maestro");
+                    System.out.println("3)Bibliotecario");
+                    int opc= Integer.parseInt(bufer.readLine());
+                    switch (opc){
+                        case 1:
+                            Estudiante estudiante = new Estudiante();
+                            estudiante.NuevoEstudiante(estudiante);
+                            break;
+                        case 2:
+                            Maestro maestro = new Maestro();
+                            maestro.NuevoMaestro(maestro);
+                            break;
+                        case 3:
+                            Bibliotecario bibliotecario = new Bibliotecario();
+                            bibliotecario.NuevoBibliotecario(bibliotecario);
+                            break;
+                        default:
+                            System.out.println("opcion no valida");
+                    }
+
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error al buscar el recurso en el archivo: " + e.getMessage());
+            throw e;
+        }
+
+        if (!encontrado) {
+            System.out.println(usuario.getTipo_us() + " no encontrado.");
+        }
+    }
 }

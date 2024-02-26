@@ -140,7 +140,7 @@ public abstract class Recurso {
         return false;
     }
     /**
-     * eliminar recurso por is
+     * eliminar recurso por id
      */
     public boolean EliminarRecurso(Recurso recurso) throws IOException{
         File archivo = new File("Recursos.csv");
@@ -170,7 +170,7 @@ public abstract class Recurso {
         return false;
     }
     /**
-     * modificar recursos por is
+     * modificar recursos por id
      */
     public void Modificar_Recurso(Recurso recurso)throws IOException{
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));

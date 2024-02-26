@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dff3d27c-ff71-48e4-805b-38a8486b3e84" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recursos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Recursos.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usuarios.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Usuarios.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Recurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Recursos/Recurso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/herenciaAbstracta1/src/main/java/edu/upvictoria/fpoo/Usuarios/Usuario.java" afterDir="false" />

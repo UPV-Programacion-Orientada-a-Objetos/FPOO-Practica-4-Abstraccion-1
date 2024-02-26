@@ -67,10 +67,9 @@ public class Administrador extends Usuario{
           pr.insertarUsuario();
       }
     }
-
     public int obtenerID(String archivo)throws IOException{
        int ID=0;
-       try(BufferedReader leer=new BufferedReader(new FileReader("archivo"))){
+       try(BufferedReader leer=new BufferedReader(new FileReader(archivo))){
            String linea;
            while((linea=leer.readLine())!=null){
                String []datos=linea.split("\t");

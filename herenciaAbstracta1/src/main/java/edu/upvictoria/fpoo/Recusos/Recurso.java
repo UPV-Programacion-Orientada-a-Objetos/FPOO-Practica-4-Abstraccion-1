@@ -12,7 +12,7 @@ public abstract class Recurso {
 
     public void CrearRecurso(String titulo,String autor,String tipo1, int ID){
         this.autor=autor;
-        this.tipo=titulo;
+        this.titulo=titulo;
         this.ID=ID;
         this.tipo= tipo1;
     }

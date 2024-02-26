@@ -1,5 +1,6 @@
 package edu.upvictoria.fpoo.Recusos;
 
+import edu.upvictoria.fpoo.Usuarios.Administrador;
 import edu.upvictoria.fpoo.Usuarios.Estudiantes;
 import edu.upvictoria.fpoo.Usuarios.Profesores;
 
@@ -15,7 +16,7 @@ public class Controlador extends IOException {
             opc=menuRecur();
             switch(opc){
                 case 1:
-                    //agregar recurso
+                    AgregarRecurso();
                     break;
                 case 2:
                     //eliminar
@@ -40,29 +41,31 @@ public class Controlador extends IOException {
         BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
         String entrada;
         System.out.println("Ingrese Autor");
-        String nombre=leer.readLine();
+        String autor=leer.readLine();
         System.out.println("Ingrese titulo");
-        String apellido=leer.readLine();
-        System.out.println("Tipo de Recurso\n1)Bibliotecario\n2)Estudiante\n3)Profesor");
+        String libro=leer.readLine();
+        System.out.println("Tipo de Recurso\n1)Libro\n2)Diario\n3)Revista");
         entrada=leer.readLine();
         int opc=Integer.parseInt(entrada);
-        int ID=obtenerID("src/main/Resources/RECURSOS.csv");
+        Administrador admin=new Administrador();
+        int ID=admin.obtenerID("src/main/Resources/RECURSOS.csv");
         if(opc==1){
-            String tipo_1="Administrador";
-            crearUsuario(nombre,apellido,ID,tipo_1,contraseña);
-            insertarUsuario();
+            String tipo_1="Libro";
+            Libro lb=new Libro();
+            lb.CrearRecurso(libro,autor,tipo_1,ID);
+            lb.insertarRecurso();
         }
         else if(opc==2){
-            Estudiantes es=new Estudiantes();
-            String tipo="Estudiante";
-            es.crearUsuario(nombre,apellido,ID,tipo,contraseña);
-            es.insertarUsuario();
+            String tip="Diario";
+            Diario dr=new Diario();
+            dr.CrearRecurso(libro,autor,tip,ID);
+            dr.insertarRecurso();
         }
         else if(opc==3){
-            Profesores pr=new Profesores();
-            String tipo="Profesor";
-            pr.crearUsuario(nombre,apellido,ID,tipo,contraseña);
-            pr.insertarUsuario();
+            String tip="Revista";
+            Revista rv=new Revista();
+            rv.CrearRecurso(libro,autor,tip,ID);
+            rv.insertarRecurso();
         }
     }
 }

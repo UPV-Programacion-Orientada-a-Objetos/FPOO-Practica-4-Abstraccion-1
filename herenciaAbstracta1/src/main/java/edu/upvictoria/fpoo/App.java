@@ -1,4 +1,6 @@
 package edu.upvictoria.fpoo;
+import edu.upvictoria.fpoo.Usuarios.Administrador;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -18,11 +20,13 @@ public class App
                     if(tt!="No existe"){
                         if(tt.equals("Administrador")) {
                             System.out.println("Usuario: Administrador");
+                            Administrador admin=new Administrador();
+                            admin.FuncionesAdmin();
+
                         }
                     }else if(tt.equals("No existe")){
                         System.out.println("Ingrese usuario (Administrador)");
                     }
-
                     break;
                 case 2:
                     //Recursos

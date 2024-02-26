@@ -4,4 +4,5 @@ public class Estudiantes extends Usuario {
     public void tipo(){
         this.tipo="Estudiante";
     }
+
 }

@@ -7,6 +7,12 @@ public class Otro extends Recurso{
     public Otro(){
         super.setTipo("Otro");
     }
+    public Otro(String Titulo, String Autor, String ID, String Tipo){
+        this.setTitulo(Titulo);
+        this.setAutor(Autor);
+        this.setNum_id(ID);
+        this.setTipo(Tipo);
+    }
     public void NuevoRecurso(Recurso recurso) {
         System.out.println("Nuevo recurso!!");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Recursos.csv", true))) {

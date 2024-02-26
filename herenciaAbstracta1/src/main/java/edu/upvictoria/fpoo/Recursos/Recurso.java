@@ -1,5 +1,6 @@
 package edu.upvictoria.fpoo.Recursos;
 
+import edu.upvictoria.fpoo.Menu;
 import edu.upvictoria.fpoo.Usuarios.Estudiante;
 
 import java.io.*;
@@ -187,35 +188,8 @@ public abstract class Recurso {
                 if (columnas.length >= 3 && Objects.equals(recurso.getNum_id(), columnas[0]) && Objects.equals(recurso.getTipo(), columnas[2])) {
                     encontrado = true;
                     recurso.EliminarRecurso(recurso);
-                    //moficar con el menu
-                    System.out.println("Ingresa el nuevo tipo de recurso: ");
-                    System.out.println("1)Libro");
-                    System.out.println("2)Diario");
-                    System.out.println("3)revista");
-                    System.out.println("4)Otro");
-                    int opc= Integer.parseInt(bufer.readLine());
-                    switch (opc){
-                        case 1:
-                            Libro libro = new Libro();
-                            libro.NuevoLibro(libro);
-                            break;
-                        case 2:
-                            Diario diario = new Diario();
-                            diario.NuevoDiario(diario);
-                            break;
-                        case 3:
-                            Revistas revista = new Revistas();
-                            revista.NuevaRevista(revista);
-                            break;
-                        case 4:
-                            Otro otro = new Otro();
-                            otro.NuevoRecurso(otro);
-                            break;
-                        default:
-                            System.out.println("opcion no valida");
-                        }
-
-
+                    Menu manu = new Menu();
+                    manu.AgregarMaterial();
                 }
             }
         } catch (IOException e) {

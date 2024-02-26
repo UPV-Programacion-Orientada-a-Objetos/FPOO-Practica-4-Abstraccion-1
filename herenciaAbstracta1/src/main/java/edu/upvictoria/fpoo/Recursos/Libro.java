@@ -6,6 +6,7 @@ public class Libro extends Recurso{
     public Libro(){
         super.setTipo("Libro");
     }
+
     public void NuevoLibro(Recurso recurso) {
         System.out.println("Nuevo Libro!!");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Recursos.csv", true))) {

@@ -1,16 +1,16 @@
 package edu.upvictoria.fpoo.Recusos;
-
-import com.sun.org.apache.xpath.internal.operations.Mod;
+import edu.upvictoria.fpoo.Modificar;
 import edu.upvictoria.fpoo.Usuarios.Administrador;
 import edu.upvictoria.fpoo.Usuarios.Estudiantes;
 import edu.upvictoria.fpoo.Usuarios.Profesores;
+import edu.upvictoria.fpoo.Usuarios.Usuario;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Controlador extends IOException {
+public class Controlador extends Usuario {
     public void menuRecursos() throws IOException {
         int opc = 0;
         while (opc != 4) {
@@ -23,7 +23,7 @@ public class Controlador extends IOException {
                    eliminarRecurso();
                     break;
                 case 3:
-
+                    modificarRecurso();
                     break;
             }
         }
@@ -77,7 +77,44 @@ public class Controlador extends IOException {
        Administrador admin=new Administrador();
        admin.eliminar("src/main/Resources/RECURSOS.csv",id);
     }
-    public void modificarRecurso(){
-        
+    public void modificarRecurso()throws IOException{
+        BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Ingrese el ID del usuario a modificar");
+        String entrada= leer.readLine();
+        int id=Integer.parseInt(entrada);
+        Modificar md=new Modificar();
+        md.modificarRecursos(id);
+    }
+
+    public void buscarRec()throws IOException{
+        BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Ingrese nombre del autor");
+        String nombre=leer.readLine();
+        System.out.println("Ingrese titulo del libro");
+        String titulo= leer.readLine();
+        String []info=BusquedaRecurso(titulo,nombre);
+        System.out.println("Informacion del recurso: ");
+        for(int i=0;i<info.length;i++){
+            System.out.println(info[i]+" , ");
+        }
+    }
+    public String[] BusquedaRecurso(String titulo,String autor){
+        String []tipo=null;
+        try(BufferedReader br=new BufferedReader(new FileReader("src/main/Resources/RECURSOS.csv"))){
+            br.readLine();
+            String linea;
+            while((linea=br.readLine())!=null){
+                String []datos=linea.split("\t");
+
+                if(datos[2].equals(titulo) && datos[1].equals(autor)){
+                    tipo=datos;
+                }else{
+                    tipo=null;
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return tipo;
     }
 }

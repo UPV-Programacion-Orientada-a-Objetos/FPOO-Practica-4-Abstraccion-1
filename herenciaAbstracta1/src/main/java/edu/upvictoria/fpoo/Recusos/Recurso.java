@@ -1,8 +1,6 @@
 package edu.upvictoria.fpoo.Recusos;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public abstract class Recurso {
     protected  String titulo;
@@ -24,4 +22,5 @@ public abstract class Recurso {
         }catch(IOException e){
         }
     }
+
 }

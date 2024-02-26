@@ -93,7 +93,8 @@ public class Menu {
                ad.AgregarUsuario();
            }
        }else if(opc==1){
-             //busqueda de recursos/////////////////////////
+            Controlador cn=new Controlador();
+            cn.buscarRec();
        }else{
            System.out.println("\n¡¡Seleccion incorrecta!!\nIntente de nuevo");
        }

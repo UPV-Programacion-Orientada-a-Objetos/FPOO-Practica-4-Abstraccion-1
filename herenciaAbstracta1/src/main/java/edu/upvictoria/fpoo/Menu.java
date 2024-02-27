@@ -17,6 +17,7 @@ public class Menu {
        String[] Exist=existenciaUsuario(nombre,contraseña);
        if(Exist!=null){
            //System.out.println("Existe");
+           System.out.println("ID de usuario: "+Exist[0]);
            return Exist[4];
        }else{
            System.out.println("No existe Usuario");

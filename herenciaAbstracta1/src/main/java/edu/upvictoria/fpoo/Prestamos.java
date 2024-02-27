@@ -114,9 +114,9 @@ public class Prestamos {
         try(BufferedReader br=new BufferedReader( new FileReader(archivo))) {
             String linea;
             br.readLine();
+            System.out.println("ID"+"\t\t"+"Autor"+"\t\t"+"Titulo"+"\t\t"+"Tipo");
             while((linea=br.readLine())!=null){
                 String[]datos=linea.split("/t");
-                System.out.println("ID"+"\t"+"Autor"+"\t"+"Titulo"+"Tipo");
                 for(int i=0;i< datos.length;i++){
                     System.out.print(datos[i]+"\t");
                 }

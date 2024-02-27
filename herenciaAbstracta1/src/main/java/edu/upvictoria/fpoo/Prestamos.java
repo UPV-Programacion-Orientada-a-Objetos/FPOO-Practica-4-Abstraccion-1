@@ -41,7 +41,7 @@ public class Prestamos {
                     //devolucion
                     break;
                 case 3:
-
+                    Renovacion();
                     //renovacion
                     break;
                 case 4:
@@ -96,9 +96,12 @@ public class Prestamos {
                 acm=5;
             }
             cont++;
-            System.out.println("Desea sali?\nS)SI\nN)NO");
+            System.out.println("Prestamo realizado\n\n"+"Desea sali?\nS)SI\nN)NO");
             entrada=leer.readLine();
             if(entrada.equals("S")){break;}
+        }
+        if(cont==acm){
+            System.out.println("Ya no puede realizar préstamos por el momento\nLimite excedido");
         }
     }
     public void imprimirRecursos(){
@@ -108,6 +111,7 @@ public class Prestamos {
             br.readLine();
             while((linea=br.readLine())!=null){
                 String[]datos=linea.split("/t");
+                System.out.println("ID"+"\t"+"Autor"+"\t"+"Titulo"+"Tipo");
                 for(int i=0;i< datos.length;i++){
                     System.out.print(datos[i]+"\t");
                 }
@@ -244,5 +248,55 @@ public class Prestamos {
                 if(file.exists()) file.delete();
                 filetemp.renameTo(file);
             }
+    }
+    ////////////////////////// RENOVAR ///////////////////////////////////
+    public void Renovacion()throws IOException{
+        BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Ingrese su ID");
+        String entrada=leer.readLine();
+        int id=Integer.parseInt(entrada);
+        String []infor=encontrarInfo("src/main/Resources/PRESTAMOS.csv",id);
+        if(infor!=null){
+            encontrarInfo22("src/main/Resources/PRESTAMOS.csv",id);
+            System.out.println("Ingrese titulo del recurso a renovar");
+            String titulo=leer.readLine();
+            RenovarModificacion(titulo);
+        }else{
+            System.out.println("No tiene préstamo de recursos");
+        }
+    }
+    public void RenovarModificacion(String titulo){
+        BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
+        String entrada;
+        String []datos;
+        try{
+            BufferedReader br=new BufferedReader(new FileReader("src/main/Resources/PRESTAMOS.csv"));
+            File archivonvo=new File("src/main/Resources/PRESTAMOS.csv"+ ".temp");
+            PrintWriter pw = new PrintWriter(new FileWriter(archivonvo));
+            String linea;
+            while((linea=br.readLine())!=null){
+                datos=linea.split("\t");
+                if(titulo.equals(datos[3])){
+                    LocalDate fechaactual=LocalDate.now();
+                    LocalDate fecha7dias=fechaactual.plusDays(7);
+                    datos[5]=fechaactual.toString();
+                    datos[6]=fecha7dias.toString();
+                    datos[7]="Activo";
+                    pw.println(String.join("\t",datos));
+                }else{
+                    pw.println(linea);
+                }
+            }
+            br.close();
+            pw.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        File file=new File("src/main/Resources/PRESTAMOS.csv");
+        File filetemp=new File("src/main/Resources/PRESTAMOS.csv"+ ".temp");
+        if(filetemp.exists()){
+            if(file.exists()) file.delete();
+            filetemp.renameTo(file);
+        }
     }
 }

@@ -37,7 +37,7 @@ public class Prestamos {
                     RegistrarPrestamo();
                     break;
                 case 2:
-
+                    devolucion();
                     //devolucion
                     break;
                 case 3:
@@ -175,5 +175,74 @@ public class Prestamos {
         }catch(IOException e){
         }
     }
-
+////////////////////DEVOLUCIÓN DE PRESTAMOS//////////////////////////////////////
+    public void devolucion()throws IOException{
+        BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Ingrese su ID");
+        String entrada=leer.readLine();
+        int id=Integer.parseInt(entrada);
+        String []infor=encontrarInfo("src/main/Resources/PRESTAMOS.csv",id);
+        if(infor!=null){
+          encontrarInfo22("src/main/Resources/PRESTAMOS.csv",id);
+          System.out.println("Ingrese titulo del recurso a devolver");
+          String titulo=leer.readLine();
+          DevolucionModificacion(titulo);
+        }else{
+            System.out.println("No tiene préstamo de recursos");
+        }
+    }
+    public void encontrarInfo22(String archivo,int ID){
+        String []info=null;
+        try(BufferedReader br=new BufferedReader(new FileReader(archivo))){
+            br.readLine();
+            String linea;
+            System.out.println("ID"+"\t"+"Usuario"+"\t"+"Apellido"+"\t"+"Titulo"+"\t"+"Autor"+"\t"+"FechaInicio"+"\t"+"FechaFinal"+"\t"+"Estado");
+            while((linea=br.readLine())!=null){
+                String[]datos=linea.split("\t");
+                int idi=Integer.parseInt(datos[0]);
+                if(ID==idi){
+                    for(int i=0;i<datos.length;i++){
+                        System.out.print(datos[i]+"\t");
+                    }
+                    System.out.println(" ");
+                    info=datos;
+                }else{
+                    info=null;
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //return info;
+    }
+    public void DevolucionModificacion(String titulo){
+            BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
+            String entrada;
+            String []datos;
+            try{
+                BufferedReader br=new BufferedReader(new FileReader("src/main/Resources/PRESTAMOS.csv"));
+                File archivonvo=new File("src/main/Resources/PRESTAMOS.csv"+ ".temp");
+                PrintWriter pw = new PrintWriter(new FileWriter(archivonvo));
+                String linea;
+                while((linea=br.readLine())!=null){
+                    datos=linea.split("\t");
+                    if(titulo.equals(datos[3])){
+                        datos[7]="Devuelto";
+                        pw.println(String.join("\t",datos));
+                    }else{
+                        pw.println(linea);
+                    }
+                }
+                br.close();
+                pw.close();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+            File file=new File("src/main/Resources/PRESTAMOS.csv");
+            File filetemp=new File("src/main/Resources/PRESTAMOS.csv"+ ".temp");
+            if(filetemp.exists()){
+                if(file.exists()) file.delete();
+                filetemp.renameTo(file);
+            }
+    }
 }

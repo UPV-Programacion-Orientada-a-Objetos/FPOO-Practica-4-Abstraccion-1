@@ -99,7 +99,20 @@ public class Menu {
            System.out.println("\n¡¡Seleccion incorrecta!!\nIntente de nuevo");
        }
     }
-    public void prestamos(){
 
+    public void inicioPrestamos()throws IOException{
+       Prestamos pr=new Prestamos();
+        String tt=inicio_Sesion();
+        if(tt!="No existe"){
+            if(tt.equals("Profesor")||tt.equals("Estudiante")){
+                System.out.println("Usuario/"+tt);
+                pr.prestamos();
+            }else{
+                System.out.println("Acceso Denegado\nIntente nuevamente");
+            }
+        }else if(tt.equals("No existe")){
+            System.out.println("Intente nuevamente");
+        }
     }
+
 }

@@ -130,11 +130,11 @@ public class Administrador extends Usuario{
         }
     }
     public void modificar()throws IOException{
-        BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ingrese el ID del usuario a modificar");
-        String entrada= leer.readLine();
-        int id=Integer.parseInt(entrada);
-        Modificar md=new Modificar();
+        String entrada = leer.readLine();
+        int id = Integer.parseInt(entrada);
+        Modificar md = new Modificar();
         md.modificarUsuario(id);
     }
 }

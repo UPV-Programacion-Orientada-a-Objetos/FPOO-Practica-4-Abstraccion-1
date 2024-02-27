@@ -19,11 +19,11 @@ public class App
                     mn.usuarios();
                     break;
                 case 2:
-                    //Recursos
                     mn.recursos();
                     break;
                 case 3:
                     //prestamos
+                    mn.inicioPrestamos();
                     break;
                 default:
                     break;

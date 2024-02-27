@@ -48,7 +48,7 @@ public class Menu {
         int opc=0;
         BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
         String entrada;
-        System.out.println("¿Que desea hacer?\n1)Usuario\n2)Recursos\n3)Prestamos\n4)Salir");
+        System.out.println("¿Que desea hacer?\n1)Usuario (Agregar,Eliminar,Modificar)\n2)Recursos (Agregar,Eliminar,Modificar)\n3)Prestamos(Realizar préstamos,Renovar,Devolver recursos,Lista de préstamos vencidos)\n4)Salir");
         entrada=leer.readLine();
         opc=Integer.parseInt(entrada);
         return opc;
@@ -104,7 +104,7 @@ public class Menu {
        Prestamos pr=new Prestamos();
         String tt=inicio_Sesion();
         if(tt!="No existe"){
-            if(tt.equals("Profesor")||tt.equals("Estudiante")){
+            if(tt.equals("Profesor")||tt.equals("Estudiante")||tt.equals("Bibliotecario")){
                 System.out.println("Usuario/"+tt);
                 pr.prestamos();
             }else{

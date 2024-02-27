@@ -46,7 +46,9 @@ public class Prestamos {
                     break;
                 case 4:
                      if(verificacionBibliotecario()){
-
+                         System.out.println("\nUsuarios con préstamos vencidos");
+                        mostrarvencidos();
+                        System.out.println("\n");
                      }else{
                          System.out.println("No tiene acceso");
                      }
@@ -318,7 +320,22 @@ public class Prestamos {
 
     public void mostrarvencidos(){
         try(BufferedReader br=new BufferedReader(new FileReader("src/main/Resources/PRESTAMOS.csv"))){
-            
+            br.readLine();
+            String linea;
+            System.out.println("ID"+"\t"+"Usuario"+"\t"+"Apellido"+"\t"+"Tipo");
+            while((linea=br.readLine())!=null){
+                String []datos=linea.split("\t");
+                if(datos[7].equals("Vencido")){
+                    int opc=Integer.parseInt(datos[0]);
+                    String []infor=encontrarInfo("src/main/Resources/USD.csv",opc);
+                    for(int i=0;i< infor.length;i++){
+                          if(i!=3){
+                              System.out.print(infor[i]+"\t");
+                          }
+                    }
+                    System.out.println("");
+                }
+            }
         }catch (IOException e){
             e.printStackTrace();
         }

@@ -1,20 +1,21 @@
 package edu.upvictoria.fpoo;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
+public class AppTest {
+
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void testMain() {
+        String input = "1\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        try {
+            App.main(null); /
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

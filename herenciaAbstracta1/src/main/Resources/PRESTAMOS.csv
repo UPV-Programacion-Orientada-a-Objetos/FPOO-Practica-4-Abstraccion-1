@@ -1,1 +1,3 @@
-3000	Nombre de usuario	Apellido	Titulo/libro	Autor/libo	FECHA
+3000	Nombre de usuario	Apellido	Titulo/libro	Autor/libo	fechaInicial	FechaFinal	Estado
+1011	eerer	erer	evaeva	leonard	2024-02-26	2024-03-04	Activo
+1011	eerer	erer	jajaja	mimi	2024-02-26	2024-03-04	Activo

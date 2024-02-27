@@ -2,6 +2,7 @@ package edu.upvictoria.fpoo;
 import edu.upvictoria.fpoo.Usuarios.Administrador;
 
 import java.io.*;
+import java.time.LocalDate;
 
 public class Prestamos {
     //// ATRIBUTOS PRÉSTAMO ////
@@ -67,8 +68,10 @@ public class Prestamos {
     public void RegistrarPrestamo()throws IOException{
         BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
         String entrada;
-        int NumPres=1,cont=0;
-        while(cont!=NumPres) {
+        int cont=0;
+        int acm=1;
+        String NumPres;
+        while((cont!=acm)) {
             imprimirRecursos();
             System.out.println("Escriba el ID del libro que desea: ");
             entrada = leer.readLine();
@@ -79,7 +82,6 @@ public class Prestamos {
             } else {
                 System.out.println("Error");
             }
-
             System.out.println("Escriba su ID: ");
             entrada = leer.readLine();
             if (entrada.matches("[0-9]+")) {
@@ -88,7 +90,15 @@ public class Prestamos {
                 System.out.println("Error");
             }
             NumPres = RegistroPrestamo(IDU,IDL);
+            if(NumPres.equals("Estudiante")){
+                acm=3;
+            }else if(NumPres.equals("Profesor")){
+                acm=5;
+            }
             cont++;
+            System.out.println("Desea sali?\nS)SI\nN)NO");
+            entrada=leer.readLine();
+            if(entrada.equals("S")){break;}
         }
     }
     public void imprimirRecursos(){
@@ -107,22 +117,34 @@ public class Prestamos {
             e.printStackTrace();
         }
     }
-    public int RegistroPrestamo(int IDU, int IDL){
-        int NumPres=0;
+    public String RegistroPrestamo(int IDU, int IDL){
+        String NumPres=null;
         //información-usuario
         String[] est=encontrarInfo("src/main/Resources/USD.csv",IDU);
         int idii=Integer.parseInt(est[0]);
         String nom=est[1];
         String apell=est[2];
+        NumPres=est[4];
         //informacion-recurso
         String[] estRe=encontrarInfo("src/main/Resources/RECURSOS.csv",IDL);
         String titu=estRe[2];
         String aut=estRe[1];
-
-        
+        LocalDate fechaactual=LocalDate.now();
+        LocalDate fecha7dias=fechaactual.plusDays(7);
+        String feI=fechaactual.toString();
+        String feF=fecha7dias.toString();
+        String Estado=null;
+        if(feI.equals(feF)){
+            Estado="Vencido";
+        }else if(fechaactual.isAfter(fecha7dias)){
+            Estado="Vencido";
+        }else{
+            Estado="Activo";
+        }
+        crearprestamo(idii,nom,apell,titu,aut,feI,feF,Estado);
+        insertarPrestamo();
         return NumPres;
     }
-
     public String[] encontrarInfo(String archivo,int ID){
         String []info=null;
         try(BufferedReader br=new BufferedReader(new FileReader(archivo))){
@@ -130,7 +152,7 @@ public class Prestamos {
             String linea;
             while((linea=br.readLine())!=null){
                 String[]datos=linea.split("\t");
-                int pass=Integer.parseInt(datos[3]);
+                //int pass=Integer.parseInt(datos[3]);
                 int idi=Integer.parseInt(datos[0]);
                 if(ID==idi){
                     info=datos;
@@ -144,6 +166,14 @@ public class Prestamos {
         }
         return info;
     }
-
+    ////Escribir prestamo/////
+    public void insertarPrestamo(){
+        String archivo="src/main/Resources/PRESTAMOS.csv";
+        try(BufferedWriter wr=new BufferedWriter(new FileWriter(archivo, true))){
+            wr.write(id+"\t"+Usuario+"\t"+apellido+"\t"+titulo+"\t"+autor+"\t"+fechaInic+"\t"+fechaFin+"\t"+estado);
+            wr.newLine();
+        }catch(IOException e){
+        }
+    }
 
 }

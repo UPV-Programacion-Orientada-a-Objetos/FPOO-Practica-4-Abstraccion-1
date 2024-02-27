@@ -45,8 +45,11 @@ public class Prestamos {
                     //renovacion
                     break;
                 case 4:
+                     if(verificacionBibliotecario()){
 
-                    //listar
+                     }else{
+                         System.out.println("No tiene acceso");
+                     }
                     break;
                 default:
                     break;
@@ -297,6 +300,27 @@ public class Prestamos {
         if(filetemp.exists()){
             if(file.exists()) file.delete();
             filetemp.renameTo(file);
+        }
+    }
+/////////////////////////////////////LISTA DE VENCIDOS/////////////////////////////////////////////////////
+    public boolean verificacionBibliotecario()throws IOException{
+        System.out.println("Solo el usuario Bibliotecario puede acceder\nIngrese su ID");
+        BufferedReader leer=new BufferedReader(new InputStreamReader(System.in));
+        String entrada=leer.readLine();
+        int ididi=Integer.parseInt(entrada);
+        String[]datoss=encontrarInfo("src/main/Resources/USD.csv",ididi);
+        if(datoss[4].equals("Bibliotecario")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public void mostrarvencidos(){
+        try(BufferedReader br=new BufferedReader(new FileReader("src/main/Resources/PRESTAMOS.csv"))){
+            
+        }catch (IOException e){
+            e.printStackTrace();
         }
     }
 }
